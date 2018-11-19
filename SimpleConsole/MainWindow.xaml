@@ -1,0 +1,29 @@
+﻿<Window x:Class="SimpleConsole.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleConsole"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="Gray">
+    <Grid>
+        <ScrollViewer x:Name="Logger"
+                      Height="350"
+                      VerticalAlignment="Top"
+                      Background="White">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding ConsoleViewModel.ConsoleMessages}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+
+                            <TextBlock Text="{Binding Message}"
+                                       FontFamily="Myriad Pro"
+                                       Margin="5"
+                                       x:Name="ConsoleMessageBlock"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
